@@ -14,33 +14,33 @@
 }
 
 .input {
-    height: 500px;
-    margin-bottom: 10;
+  height: 500px;
+  margin-bottom: 10;
 }
 
 .btn {
-    display: block;
-    margin: 5px auto;
-    width: 100%;
+  display: block;
+  margin: 5px auto;
+  width: 100%;
 }
 
 .UVIndex {
-    border: rgb(17, 0, 255) 3px solid;
-    border-radius: 22px;
-    margin: 10px auto;
-    width: 45%;
+  border: rgb(17, 0, 255) 3px solid;
+  border-radius: 22px;
+  margin: 10px auto;
+  width: 45%;
 }
 
 .below {
-    background-color: rgb(212, 233, 205);
+  background-color: rgb(212, 233, 205);
 }
 
 .moderate {
-    background-color: rgba(78, 218, 36, 0.877);
+  background-color: rgba(78, 218, 36, 0.877);
 }
 
 .strong {
-    background-color: rgb(255, 0, 0);
+  background-color: rgb(255, 0, 0);
 }
 
 .forecast {
@@ -49,29 +49,29 @@
 }
 
 .dailyForecast {
-    background-color: rgba(245, 245, 220, 0.959);
-    flex-basis: 50%;
-    height: 225px;
-    margin: 10px auto;
-    border: rgb(251, 255, 0) 3px solid);
-    border-radius: 8px;
+  background-color: rgba(245, 245, 220, 0.959);
+  flex-basis: 50%;
+  height: 225px;
+  margin: 10px auto;
+  border: rgb(251, 255, 0) 3px solid;
+  border-radius: 8px;
 }
 
 .forecastDate {
-    border-bottom: rgb(251, 255, 0) 3px solid;
+  border-bottom: rgb(251, 255, 0) 3px solid;
 }
 
 .forcastText {
-    text-align: left;
-    margin: 5px 10px;
-    font-style: bold;
-    font-size: large;
+  text-align: left;
+  margin: 5px 10px;
+  font-style: bold;
+  font-size: large;
 }
 
 .forcastIcon {
-    width: 50px;
-    background-color: rgba(245, 245, 220, 0.959);
-    border: rgb(251, 255, 0) 3px solid;
-    border-radius: 10px;
-    padding: 5px;
+  width: 50px;
+  background-color: rgba(245, 245, 220, 0.959);
+  border: rgb(251, 255, 0) 3px solid;
+  border-radius: 10px;
+  padding: 5px;
 }
