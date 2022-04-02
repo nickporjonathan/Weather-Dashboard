@@ -110,3 +110,32 @@ function saveCity(cityLabel) {
     newListener(SaveCityKey + localStorage.length);
   }
 }
+
+function loadPage() {
+  let dateText = document.getElementById("date");
+  dateText.innerHTML = date;
+  for (let i = 0; i < localStorage.length; i++) {
+    let savedCityLabel = localStorage.getItem(SaveCityKey + i);
+    $("#buttons").append(
+      `<button class = 'btn btn-primary btn-m' id = '${
+        SaveCityKey + i
+      }'>${savedCityLabel}</button>`
+    );
+    newListener(SaveCityKey + i);
+  }
+}
+
+function newListener(cityKey) {
+  document.getElementById(`${cityKey}`).addEventListener("click", function () {
+    let newCityLabel = document.getElementById(`${cityKey}`).innerHTML;
+    climate(newCityLabel);
+  });
+}
+
+let newCity = document.getElementById("add-city");
+newCity.addEventListener("click", function () {
+  let cityLabel = document.getElementById("city").value;
+  climate(cityLabel);
+});
+
+loadPage();
