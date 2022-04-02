@@ -49,3 +49,46 @@ function UVShade(UVIndex) {
   UVDiv.innerHTML = `Current UV: ${UVIndex}`;
   UVDiv.classList.add(`${level}`);
 }
+
+function loadForecast(data) {
+  if ($("#forecast").children().length == 0) {
+    for (let i = 0; i < 6; i++) {
+      let day = moment().add(i, "days").format("MMMM, DD YYYY");
+      let icon = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${data.list[i].weather[0].icon}.svg`;
+      $("#forecast").append(
+        `<div class = 'dailyForecast' id = 'forecast${i}'></div>`
+      );
+      $(`#forecast${i}`).append(
+        `<h4 class = 'forecastDate' id = 'date${i}'>${day}</h4>`
+      );
+      $(`#forecast${i}`).append(
+        `<image class = 'forecastIcon' id = 'icon${i}' src = '${icon}'></image>`
+      );
+      $(`#forecast${i}`).append(
+        `<p class = 'forecastText' id = 'temp${i}'>Temp: ${data.list[i].main.temp}°C</p>`
+      );
+      $(`#forecast${i}`).append(
+        `<p class = 'forecastText' id = 'humid${i}'>Humidity: ${data.list[i].main.humidity}%</p>`
+      );
+      $(`#forecast${i}`).append(
+        `<p class = 'forecastText' id = 'wind${i}'>Wind: ${data.list[i].wind.speed}KPH</p>`
+      );
+    }
+  } else {
+    for (let i = 0; i < 6; i++) {
+      let day = moment().add(i, "days").format("MMMM, DD YYYY");
+      let icon = `https://s3-us-west-2.amazonaws.com/s.cdpn.io/162656/${data.list[i].weather[0].icon}.svg`;
+      document.getElementById(`date${i}`).innerHTML = day;
+      document.getElementById(`icon${i}`).src = icon;
+      document.getElementById(
+        `temp${i}`
+      ).innerHTML = `Temp: ${data.list[i].main.temp}`;
+      document.getElementById(
+        `humid${i}`
+      ).innerHTML = `Humidity: ${data.list[i].main.humidity}`;
+      document.getElementById(
+        `wind${i}`
+      ).innerHTML = `Wind: ${data.list[i].wind.speed}`;
+    }
+  }
+}
