@@ -92,3 +92,21 @@ function loadForecast(data) {
     }
   }
 }
+
+function saveCity(cityLabel) {
+  let checkCityStorage = true;
+  for (let i = 0; i < localStorage.length; i++) {
+    if (localStorage.getItem(SaveCityKey + i) == cityLabel) {
+      checkCityStorage = false;
+    }
+  }
+  if (checkCityStorage == true) {
+    localStorage.setItem(SaveCityKey + localStorage.length, cityLabel);
+    $("#buttons").append(
+      `<button class = 'btn btn-primary btn-m' id = '${
+        SaveCityKey + localStorage.length
+      }'>${cityLabel}</button>`
+    );
+    newListener(SaveCityKey + localStorage.length);
+  }
+}
